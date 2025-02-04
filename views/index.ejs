@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Lista de Compras </h1>
+    <p> Aqui está a sua loja <%= mensagem %> </p>
+    <ul>
+        <% for(let i = 0; i < lista.length; i++) { %>
+            <li><%= lista[i] %> </li>
+        <% } %>
+    </ul>
+    <form action="/" method="get">
+        <button type="submit">Home</button>
+    </form>
+    <form action="/lista" method="get">
+        <button type="submit">Lista de compras</button>
+    </form>
+    <form action="/contacts" method="get">
+      <button type="submit">Contactos</button>
+    </form>
+</body>
+</html>
