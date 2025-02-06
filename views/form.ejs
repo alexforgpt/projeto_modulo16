@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="user-form">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="ursername"value="<%= user.username%>">
+        <label for="email">Email</label>
+        <imput type="text" name="email" id="email" value="<%= user.birthdate %>">
+            <button type="submit">Submeter  </button>
+        
+    </form>
+
+    <script> 
+    document.getElementById('user.form').addEventListener('submit', function(event){
+        event.preventDefault();
+        const formData=new FormData (event.target);
+        const data =Object.fromEntries(formData.entries());
+        
+        axios.post ('/user', data)
+        .then (response=>{
+            console.log('Success:', response.data);
+            location.reload();
+        })
+        .catch((error)=> {
+            console.error ('Error:',error);
+        });
+    });
+ 
+
+        
+    </script>
+</body>
+</html>
